@@ -16,7 +16,7 @@
         <tr><th>Kondisi Mesin</th><td>{{ $machine->operasional_normal ? 'Normal' : 'Bermasalah' }}</td></tr>
         <tr><th>Komponen Kerusakan</th><td>{{ $machine->komponen_rusak }}</td></tr>
         <tr><th>Memerlukan Perawatan Besar atau Tidak?</th><td>{{ $machine->butuh_perawatan_besar ? 'Ya' : 'Tidak' }}</td></tr>
-        <tr><th>Catatan Kelayakan Operasional</th><td>{{ $machine->catatan }}</td></tr>
+        <tr><th>Catatan Operasional</th><td>{{ $machine->catatan }}</td></tr>
     </table>
 </body>
 </html>

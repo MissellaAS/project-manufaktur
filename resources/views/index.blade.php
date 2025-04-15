@@ -17,7 +17,7 @@
                 <th>Kondisi Mesin</th>
                 <th>Komponen Kerusakan</th>
                 <th>Memerlukan perawatan besar atau tidak</th>
-                <th>Catatan Kelayakan</th>
+                <th>Catatan Operasional</th>
             </tr>
         </thead>
         <tbody>

@@ -10,10 +10,10 @@
         @csrf
 
         <label>Nama Pegawai:</label><br>
-        <input type="text" name="pegawai" required><br><br>
+        <input type="text" name="nama_pegawai" required><br><br>
 
         <label>Nama Mesin:</label><br>
-        <select type="text" name="nama" required><br><br>
+        <select type="text" name="nama_mesin" required><br><br>
             <option value="1">Milling</option>
             <option value="2">Turning</option>
             <option value="3">Milling CNC</option>
@@ -24,7 +24,7 @@
 
 
         <label>Nomor Mesin:</label><br>
-        <select type="text" name="nomor" required><br><br>
+        <select type="text" name="nomor_mesin" required><br><br>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -33,22 +33,22 @@
         </select><br><br>
 
         <label>Kondisi Mesin:</label><br>
-        <select name="operasional_normal" required>
+        <select name="kondisi_mesin" required>
             <option value="1">Normal</option>
             <option value="2">Bermasalah</option>
         </select><br><br>
 
         <label>Komponen Kerusakan(jika ada):</label><br>
-        <input type="text" name="komponen_rusak"><br><br>
+        <input type="text" name="komponen_kerusakan"><br><br>
 
         <label>Memerlukan Perawatan Besar atau Tidak?</label><br>
-        <select name="butuh_perawatan_besar">
+        <select name="membutuhkan_perawatanbesar_atau_tdak">
             <option value="1">Ya</option>
             <option value="0">Tidak</option>
         </select><br><br>
 
         <label>Catatan Kelayakan Operasional:</label><br>
-        <textarea name="catatan"></textarea><br><br>
+        <textarea name="catatan_operasional"></textarea><br><br>
 
         <button type="submit">Submit</button>
     </form>
