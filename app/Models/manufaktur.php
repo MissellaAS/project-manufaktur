@@ -9,10 +9,11 @@ class manufaktur extends Model
 {
     use HasFactory;
 
-    protected $table = 'project_manufakturs'; // Nama tabel di database
+    protected $table = 'project_manufaktur'; // Nama tabel di database
 
     protected $fillable = [
         'nama_pegawai',
+        'tanggal_pemeriksaan',
         'nama_mesin',
         'nomor_mesin',
         'kondisi_mesin',

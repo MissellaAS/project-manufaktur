@@ -5,7 +5,7 @@
 <div class ="bg-white p-6 rounded-lg shadow-md">
     <h2 class="text-2xl font-bold mb-4">Data Mesin</h2>
 
-    @if ($errors->any())
+    <!-- @if ($errors->any())
         <div class="alert alert-danger mt-4">
             <ul>
                 @foreach ($errors->all() as $error)
@@ -13,7 +13,7 @@
                 @endforeach
             </ul>
         </div>
-    @endif
+    @endif -->
     
     <form action="{{ route('manufaktur.store') }}" method="POST">
 
@@ -24,13 +24,13 @@
         </div>
 
         <div class="mb-4">
-            <label for="tanggal_pemeriksaan" class="block text-gray-700">Tanggal Pemeriksaan </label>
-            <input type="text" name="nama_pegawai" id="nama" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+        <label for="tanggal_pemeriksaan" class="block text-gray-700">Tanggal Pemeriksaan</label>
+        <input type="date" name="tanggal_pemeriksaan" id="tanggal_pemeriksaan" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
         </div>
         
-        <div class="mb-4">
+        <div class="mb-4" >
         <label for="nama_mesin" class="block text-gray-700">Nama Mesin</label>
-        <select>
+        <select name="nama_mesin" id="nama_mesin"> 
             <option value="1">Milling</option>
             <option value="2">Milling CNC</option>
             <option value="3">Turning</option>
@@ -42,7 +42,7 @@
 
         <div class="mb-4">
         <label for="nomor_mesin" class="block text-gray-800">Nomor Mesin</label>
-        <select>
+        <select name="nomor_mesin" id="nomor_mesin">>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -66,31 +66,32 @@
 
         <div class="mb-4">
             <label for="komponen_kerusakan" class="block text-gray-700">Komponen Kerusakan Mesin</label>
-            <input type="text" name="kemponen_kerusakan" id="komponen_kerusakan" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+            <input type="text" name="komponen_kerusakan" id="komponen_kerusakan" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
         </div>
 
-        <label for="apakah memerlukan perawatanbesar_atau_tidak" class="block text-gray-700">Apakah Memerlukan Perawatan Besar</label>
+        <label for="memerlukan_perawatanbesar_atau_tidak" class="block text-gray-700">Apakah Memerlukan Perawatan Besar Atau Tidak</label>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">Ya</label>
+        <input class="form-check-input" type="radio" name="memerlukan_perawatanbesar_atau_tidak" id="perawatan_tidak" value="Ya">
+        <label class="form-check-label" for="memerlukan_perawatanbesar_atau_tidak">Ya</label>
         </div>
         <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">Tidak</label>
+        <input class="form-check-input" type="radio" name="memerlukan_perawatanbesar_atau_tidak" id="perawatan_iyaDS" value="Tidak" checked>
+        <label class="form-check-label" for="memerlukan_perawatanbesar_atau_tidak">Tidak</label>
         </div>
 
         <div class="mb-4">
             <label for="catatan_kelayakan_operasional" class="block text-gray-700">Catatan Kelayakan Operasional</label>
-            <input type="text" name="catatan_kelayakan_operasional" id="nama" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+            <textarea class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required></textarea>
         </div>
 
-        <div>
+        <div class= "mb-4">
         <button type="submit" class="btn btn-success">Submit</button>
-        <button type="submit" class="btn btn-danger">Reset</button>
+        <button type="reset" class="btn btn-danger">Reset</button>
         </div>
-</div>
 
     </form>
+</div>
+
     
 
 

@@ -14,21 +14,23 @@ return new class extends Migration
         Schema::create('project_manufakturs', function (Blueprint $table) {
             $table->id();
             $table->string('nama_pegawai');
+            $table->date('tanggal_pemeriksaan');
             $table->string('nama_mesin');
             $table->string('nomor_mesin');
             $table->boolean('kondisi_mesin'); //--masih beropersi normal atau tidak--//
             $table->string('komponen_kerusakan')->nullable();
             $table->boolean('memerlukan_perawatanbesar_atau_tidak')->nullable(); 
-            $table->text('catatan_kelayakan')->nullable();//--catatan sistem berdasarkan logika--//
+            $table->text('catatan_kelayakan')->nullable();//--catatan sistem berdasarkan logika--//;
             $table->timestamps(); 
         });
     }
 
     /**
      * Reverse the migrations.
-     */
-    public function down(): void
+    */
+
+    function down(): void
     {
-        Schema::dropIfExists('project_manufakturs');
+        Schema::dropIfExists('project_manufaktur');
     }
 };
