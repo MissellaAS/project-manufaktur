@@ -19,12 +19,17 @@
 
         @csrf
         <div class="mb-4">
-            <label for="nama pegawai" class="block text-gray-700">Nama Lengkap Pegawai </label>
-            <input type="text" name="nama pegawai" id="nama" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+            <label for="nama_pegawai" class="block text-gray-700">Nama Lengkap Pegawai </label>
+            <input type="text" name="nama_pegawai" id="nama" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+        </div>
+
+        <div class="mb-4">
+            <label for="tanggal_pemeriksaan" class="block text-gray-700">Tanggal Pemeriksaan </label>
+            <input type="text" name="nama_pegawai" id="nama" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
         </div>
         
         <div class="mb-4">
-        <label for="nama mesin" class="block text-gray-700">Nama Mesin</label>
+        <label for="nama_mesin" class="block text-gray-700">Nama Mesin</label>
         <select>
             <option value="1">Milling</option>
             <option value="2">Milling CNC</option>
@@ -36,7 +41,7 @@
         </div>
 
         <div class="mb-4">
-        <label for="nomor mesin" class="block text-gray-700">Nomor Mesin</label>
+        <label for="nomor_mesin" class="block text-gray-800">Nomor Mesin</label>
         <select>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -49,7 +54,7 @@
         </select>
         </div>
 
-        <label for="kondisi mesin" class="block text-gray-700">Kondisi Mesin</label>
+        <label for="kondisi_mesin" class="block text-gray-700">Kondisi Mesin</label>
         <div class="form-check">
         <input class="form-check-input" type="radio" name="kondisi_mesin" id="kondisi_normal" value="Normal">
         <label class="form-check-label" for="kondisi_normal">Normal</label>
@@ -60,11 +65,11 @@
         </div>
 
         <div class="mb-4">
-            <label for="komponen kerusakan" class="block text-gray-700">Komponen Kerusakan Mesin</label>
-            <input type="text" name="nama pegawai" id="nama" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+            <label for="komponen_kerusakan" class="block text-gray-700">Komponen Kerusakan Mesin</label>
+            <input type="text" name="kemponen_kerusakan" id="komponen_kerusakan" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
         </div>
 
-        <label for="kondisi mesin" class="block text-gray-700">Apakah Memerlukan Perawatan Besar</label>
+        <label for="apakah memerlukan perawatanbesar_atau_tidak" class="block text-gray-700">Apakah Memerlukan Perawatan Besar</label>
         <div class="form-check">
         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
         <label class="form-check-label" for="flexRadioDefault1">Ya</label>
@@ -75,8 +80,8 @@
         </div>
 
         <div class="mb-4">
-            <label for="catatan kelayakan operasional" class="block text-gray-700">Catatan Kelayakan Operasional</label>
-            <input type="text" name="nama pegawai" id="nama" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+            <label for="catatan_kelayakan_operasional" class="block text-gray-700">Catatan Kelayakan Operasional</label>
+            <input type="text" name="catatan_kelayakan_operasional" id="nama" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
         </div>
 
         <div>
@@ -84,6 +89,10 @@
         <button type="submit" class="btn btn-danger">Reset</button>
         </div>
 </div>
+
     </form>
+    
+
 
 @endsection
+
