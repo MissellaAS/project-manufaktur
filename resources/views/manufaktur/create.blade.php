@@ -2,98 +2,110 @@
 
 @section('content')
 
-<div class ="bg-white p-6 rounded-lg shadow-md">
-    <h2 class="text-2xl font-bold mb-4">Data Mesin</h2>
+<div class="bg-gradient-to-br from-indigo-100 via-white to-blue-50 p-10 rounded-2xl shadow-2xl max-w-4xl mx-auto mt-10 border border-blue-200">
+    <h2 class="text-4xl font-extrabold text-center text-indigo-800 mb-10">🛠️ Pemeriksaan Mesin</h2>
 
-    <!-- @if ($errors->any())
-        <div class="alert alert-danger mt-4">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif -->
-    
-    <form action="{{ route('manufaktur.store') }}" method="POST">
-
+    <form action="{{ route('manufaktur.store') }}" method="POST" class="space-y-6">
         @csrf
-        <div class="mb-4">
-            <label for="nama_pegawai" class="block text-gray-700">Nama Lengkap Pegawai </label>
-            <input type="text" name="nama_pegawai" id="nama" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+
+        {{-- Nama Pegawai --}}
+        <div>
+            <label for="nama_pegawai" class="block text-lg font-semibold text-gray-900"> Nama Lengkap Pegawai</label>
+            <input type="text" name="nama_pegawai" id="nama" required
+                class="mt-2 w-full px-5 py-3 border border-gray-300 rounded-xl bg-white shadow-inner focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition">
         </div>
 
-        <div class="mb-4">
-        <label for="tanggal_pemeriksaan" class="block text-gray-700">Tanggal Pemeriksaan</label>
-        <input type="date" name="tanggal_pemeriksaan" id="tanggal_pemeriksaan" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
-        </div>
-        
-        <div class="mb-4" >
-        <label for="nama_mesin" class="block text-gray-700">Nama Mesin</label>
-        <select name="nama_mesin" id="nama_mesin"> 
-            <option value="1">Milling</option>
-            <option value="2">Milling CNC</option>
-            <option value="3">Turning</option>
-            <option value="4">Grinding</option>
-            <option value="5">Welding</option>
-            <option value="6">Drilling</option>
-        </select>
+        {{-- Tanggal Pemeriksaan --}}
+        <div>
+            <label for="tanggal_pemeriksaan" class="block text-lg font-semibold text-gray-900"> Tanggal Pemeriksaan</label>
+            <input type="date" name="tanggal_pemeriksaan" id="tanggal_pemeriksaan" required
+                class="mt-2 w-full px-5 py-3 border border-gray-300 rounded-xl bg-white shadow-inner focus:outline-none focus:ring-2 focus:ring-indigo-400 transition">
         </div>
 
-        <div class="mb-4">
-        <label for="nomor_mesin" class="block text-gray-800">Nomor Mesin</label>
-        <select name="nomor_mesin" id="nomor_mesin">>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-        </select>
+        {{-- Nama Mesin --}}
+        <div>
+            <label for="nama_mesin" class="block text-lg font-semibold text-gray-900"> Nama Mesin</label>
+            <select name="nama_mesin" id="nama_mesin"
+                class="mt-2 w-full px-5 py-3 border border-gray-300 rounded-xl bg-white shadow-inner focus:ring-2 focus:ring-indigo-400 transition">
+                <option value="">-- Pilih Mesin --</option>
+                <option value="1">Milling</option>
+                <option value="2">Milling CNC</option>
+                <option value="3">Turning</option>
+                <option value="4">Grinding</option>
+                <option value="5">Welding</option>
+                <option value="6">Drilling</option>
+            </select>
         </div>
 
-        <label for="kondisi_mesin" class="block text-gray-700">Kondisi Mesin</label>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="kondisi_mesin" id="kondisi_normal" value="Normal">
-        <label class="form-check-label" for="kondisi_normal">Normal</label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="kondisi_mesin" id="kondisi_bermasalah" value="Bermasalah" checked>
-        <label class="form-check-label" for="kondisi_bermasalah">Bermasalah</label>
-        </div>
-
-        <div class="mb-4">
-            <label for="komponen_kerusakan" class="block text-gray-700">Komponen Kerusakan Mesin</label>
-            <input type="text" name="komponen_kerusakan" id="komponen_kerusakan" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required>
+        {{-- Nomor Mesin --}}
+        <div>
+            <label for="nomor_mesin" class="block text-lg font-semibold text-gray-900"> Nomor Mesin</label>
+            <select name="nomor_mesin" id="nomor_mesin"
+                class="mt-2 w-full px-5 py-3 border border-gray-300 rounded-xl bg-white shadow-inner focus:ring-2 focus:ring-indigo-400 transition">
+                @for ($i = 1; $i <= 8; $i++)
+                    <option value="{{ $i }}">{{ $i }}</option>
+                @endfor
+            </select>
         </div>
 
-        <label for="memerlukan_perawatanbesar_atau_tidak" class="block text-gray-700">Apakah Memerlukan Perawatan Besar Atau Tidak</label>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="memerlukan_perawatanbesar_atau_tidak" id="perawatan_tidak" value="Ya">
-        <label class="form-check-label" for="memerlukan_perawatanbesar_atau_tidak">Ya</label>
-        </div>
-        <div class="form-check">
-        <input class="form-check-input" type="radio" name="memerlukan_perawatanbesar_atau_tidak" id="perawatan_iyaDS" value="Tidak" checked>
-        <label class="form-check-label" for="memerlukan_perawatanbesar_atau_tidak">Tidak</label>
-        </div>
-
-        <div class="mb-4">
-            <label for="catatan_kelayakan_operasional" class="block text-gray-700">Catatan Kelayakan Operasional</label>
-            <textarea class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" required></textarea>
-        </div>
-
-        <div class= "mb-4">
-        <button type="submit" class="btn btn-success">Submit</button>
-        <button type="reset" class="btn btn-danger">Reset</button>
+        {{-- Kondisi Mesin --}}
+        <div>
+            <label class="block text-lg font-semibold text-gray-900"> Kondisi Mesin</label>
+            <div class="flex gap-6 mt-3">
+                <label class="inline-flex items-center">
+                    <input type="radio" name="kondisi_mesin" value="Normal" class="form-radio text-green-600">
+                    <span class="ml-3 text-gray-800">Normal</span>
+                </label>
+                <label class="inline-flex items-center">
+                    <input type="radio" name="kondisi_mesin" value="Bermasalah" checked class="form-radio text-red-600">
+                    <span class="ml-3 text-gray-800">Bermasalah</span>
+                </label>
+            </div>
         </div>
 
+        {{-- Komponen Rusak --}}
+        <div>
+            <label for="komponen_kerusakan" class="block text-lg font-semibold text-gray-900"> Komponen Mesin Rusak</label>
+            <input type="text" name="komponen_kerusakan" id="komponen_kerusakan" required
+                class="mt-2 w-full px-5 py-3 border border-gray-300 rounded-xl bg-white shadow-inner focus:ring-2 focus:ring-red-300 transition">
+        </div>
+
+        {{-- Perawatan Besar --}}
+        <div>
+            <label class="block text-lg font-semibold text-gray-900"> Memerlukan Perawatan Besar?</label>
+            <div class="flex gap-6 mt-3">
+                <label class="inline-flex items-center">
+                    <input type="radio" name="memerlukan_perawatanbesar_atau_tidak" value="Ya" class="form-radio text-blue-600">
+                    <span class="ml-3 text-gray-800">Ya</span>
+                </label>
+                <label class="inline-flex items-center">
+                    <input type="radio" name="memerlukan_perawatanbesar_atau_tidak" value="Tidak" checked class="form-radio text-blue-600">
+                    <span class="ml-3 text-gray-800">Tidak</span>
+                </label>
+            </div>
+        </div>
+
+        {{-- Catatan --}}
+        <div>
+            <label for="catatan_kelayakan_operasional" class="block text-lg font-semibold text-gray-900">📝 Catatan Operasional</label>
+            <textarea name="catatan_kelayakan_operasional" id="catatan_kelayakan_operasional" rows="4" required
+                class="mt-2 w-full px-5 py-3 border border-gray-300 rounded-xl bg-white shadow-inner focus:ring-2 focus:ring-indigo-400 transition"></textarea>
+        </div>
+
+        {{-- Tombol --}}
+        <div class="flex justify-end gap-4 pt-6">
+            <button type="submit"
+                class="px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-bold shadow-md hover:shadow-lg hover:scale-105 transition">✅ Submit</button>
+            <button type="reset"
+                class="px-6 py-2 bg-gradient-to-r from-red-400 to-rose-600 text-white rounded-lg font-bold shadow-md hover:shadow-lg hover:scale-105 transition">🔄 Reset</button>
+        </div>
     </form>
 </div>
-
-    
+<div class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg-mesin.jpg');">
+    <div class="bg-gradient-to-br from-indigo-100 via-white to-blue-50 bg-opacity-90 p-10 rounded-2xl shadow-2xl max-w-4xl mx-auto mt-10 border border-blue-200 backdrop-blur-sm">
+        {{-- isi form seperti sebelumnya --}}
+    </div>
+</div>
 
 
 @endsection
-

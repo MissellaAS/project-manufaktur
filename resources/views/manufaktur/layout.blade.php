@@ -6,7 +6,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-    <div class="container mx-auto mt-5">
+    <div class="container mx-auto mt-5 ">
         <h1 class="text-2xl font-bold mb-4">Analisis Data Kelayakan Operasional Kerusakan Pada Mesin Industri</h1>
         @yield('content')
     </div>
@@ -15,15 +15,25 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-image: url('https://i.pinimg.com/474x/f8/3a/5d/f83a5d22986f2d0e6be75a7380c30174.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
         margin: 0;
         padding: 0;
+
+        
     }
+
     .container {
         max-width: 800px;
         margin: auto;
         padding: 20px;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(8px);
+        border-radius: 1rem;
+        padding: 2rem;
         border-radius: 5px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
