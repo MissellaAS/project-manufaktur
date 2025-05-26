@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>Analisis Data Kelayakan Operasional Kerusakan Pada Mesin Industri</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous"> 
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-    <div class="container mx-auto mt-5">
+    <div class="container mx-auto mt-5" style="background-color: aqua">
         <h1 class="text-2xl font-bold mb-4">Analisis Data Kelayakan Operasional Kerusakan Pada Mesin Industri</h1>
         @yield('content')
     </div>
