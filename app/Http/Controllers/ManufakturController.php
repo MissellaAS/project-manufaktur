@@ -11,8 +11,8 @@ class ManufakturController extends Controller
         
     public function index()
     {
-        $machines = Manufaktur::all();
-        return view('manufaktur.index', compact('manufaktur'));
+        $manufakturs = Manufaktur::all();
+        return view('manufaktur.index', compact('manufakturs'));
     }
 
     public function create()
@@ -31,12 +31,11 @@ class ManufakturController extends Controller
             'nomor_mesin' => 'required',
             'kondisi_mesin' => 'required',
             'komponen_kerusakan' => 'nullable',
-            'membutuhkan_perawatanbesar_atau_tidak' => 'required',
+            'perawatan_besar' => 'required',
             'catatan_kelayakan' => 'nullable',
         ]);
 
-        manufaktur::create($request->all());   
-
+        Manufaktur::create($request->all());   
         return redirect()->route('manufaktur.index')->with('success', 'Data berhasil disimpan.');
        
 
@@ -45,8 +44,8 @@ class ManufakturController extends Controller
     public function show($id)
     {
 
-        $machine = Manufaktur::findOrFail($id);
-        return view('manufaktur.view', compact('manufaktur'));
+        $manufakturs = Manufaktur::findOrFail($id);
+        return view('manufaktur.view', compact('manufakturs'));
     }
 
     /**
@@ -54,8 +53,8 @@ class ManufakturController extends Controller
      */
     public function edit($id)
     {
-        //$machine = Manufaktur::findOrFail($id);
-        //return view('manufaktur.edit', compact('manufaktur'));
+        //$machine = Manufakturs::findOrFail($id);
+        //return view('manufakturs.edit', compact('manufakturs'));
     }
 
     /**

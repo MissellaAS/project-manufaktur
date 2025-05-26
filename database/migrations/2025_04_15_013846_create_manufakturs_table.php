@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('project_manufakturs', function (Blueprint $table) {
+        Schema::create('manufakturs', function (Blueprint $table) {
             $table->id();
             $table->string('nama_pegawai');
             $table->date('tanggal_pemeriksaan');
             $table->string('nama_mesin');
             $table->string('nomor_mesin');
-            $table->boolean('kondisi_mesin'); //--masih beropersi normal atau tidak--//
+            $table->string('kondisi_mesin'); 
             $table->string('komponen_kerusakan')->nullable();
-            $table->boolean('memerlukan_perawatanbesar_atau_tidak')->nullable(); 
+            $table->string('perawatan_besar');
             $table->text('catatan_kelayakan')->nullable();//--catatan sistem berdasarkan logika--//;
             $table->timestamps(); 
         });
@@ -31,6 +31,6 @@ return new class extends Migration
 
     function down(): void
     {
-        Schema::dropIfExists('project_manufaktur');
+        Schema::dropIfExists('manufakturs');
     }
 };

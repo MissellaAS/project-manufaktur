@@ -61,7 +61,7 @@
                     <span class="ml-3 text-gray-800">Bermasalah</span>
                 </label>
             </div>
-        </div>
+        </div> 
 
         {{-- Komponen Rusak --}}
         <div>
@@ -69,6 +69,21 @@
             <input type="text" name="komponen_kerusakan" id="komponen_kerusakan" required
                 class="mt-2 w-full px-5 py-3 border border-gray-300 rounded-xl bg-white shadow-inner focus:ring-2 focus:ring-red-300 transition">
         </div>
+
+        {{-- Kondisi Mesin --}}
+        <div>
+            <label class="block text-lg font-semibold text-gray-900"> Perawatan?</label>
+            <div class="flex gap-6 mt-3">
+                <label class="inline-flex items-center">
+                    <input type="radio" name="perawatan_besar" value="ya" class="form-radio text-green-600">
+                    <span class="ml-3 text-gray-800">ya</span>
+                </label>
+                <label class="inline-flex items-center">
+                    <input type="radio" name="perawatan_besar" value="tidak" checked class="form-radio text-red-600">
+                    <span class="ml-3 text-gray-800">tidak</span>
+                </label>
+            </div>
+        </div> 
 
         {{-- Perawatan Besar --}}
         <div>
@@ -84,7 +99,6 @@
                 </label>
             </div>
         </div>
-
         {{-- Catatan --}}
         <div>
             <label for="catatan_kelayakan_operasional" class="block text-lg font-semibold text-gray-900">📝 Catatan Operasional</label>
@@ -93,16 +107,17 @@
         </div>
 
         {{-- Tombol --}}
-        <div class="flex justify-end gap-4 pt-6">
-            <button type="submit"
-                class="px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg font-bold shadow-md hover:shadow-lg hover:scale-105 transition">✅ Submit</button>
-            <button type="reset"
-                class="px-6 py-2 bg-gradient-to-r from-red-400 to-rose-600 text-white rounded-lg font-bold shadow-md hover:shadow-lg hover:scale-105 transition">🔄 Reset</button>
-        </div>
-    </form>
+<div class="flex justify-end gap-4 pt-6">
+    <button type="submit"
+        class="bg-blue-500 ">
+        ✅ Submit
+    </button>
+    <button type="reset"
+        class="bg-red-500">
+        🔄 Reset
+    </button>
 </div>
-<div class="relative bg-cover bg-center bg-no-repeat" style="background-image: url('/images/bg-mesin.jpg');">
-    <div class="bg-gradient-to-br from-indigo-100 via-white to-blue-50 bg-opacity-90 p-10 rounded-2xl shadow-2xl max-w-4xl mx-auto mt-10 border border-blue-200 backdrop-blur-sm">
+
         {{-- isi form seperti sebelumnya --}}
     </div>
 </div>

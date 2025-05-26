@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class manufaktur extends Model
+class Manufaktur extends Model
 {
     use HasFactory;
-
-    protected $table = 'project_manufaktur'; // Nama tabel di database
 
     protected $fillable = [
         'nama_pegawai',
@@ -18,7 +16,7 @@ class manufaktur extends Model
         'nomor_mesin',
         'kondisi_mesin',
         'komponen_kerusakan',
-        'memerlukan_perawatanbesar_atau_tidak',
+        'perawatan_besar',
         'catatan_kelayakan',
     ];
 }
