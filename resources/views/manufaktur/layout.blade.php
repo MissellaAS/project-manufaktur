@@ -6,7 +6,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-    <div class="container mx-auto mt-5" style="background-color: aqua">
+    <div class="container mx-auto mt-5" style="background-color: ">
         <h1 class="text-2xl font-bold mb-4">Analisis Data Kelayakan Operasional Kerusakan Pada Mesin Industri</h1>
         @yield('content')
     </div>
