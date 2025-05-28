@@ -18,6 +18,7 @@ class Manufaktur extends Model
         'komponen_kerusakan',
         'perawatan_besar',
         'catatan_kelayakan',
+        
     ];
 }
 // Compare this snippet from www/project-manufaktur/resources/views/manufaktur/create.blade.php:

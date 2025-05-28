@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Pagination\Paginator; // Import Paginator
+use Illuminate\Pagination\Paginator;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,4 +23,6 @@ class AppServiceProvider extends ServiceProvider
     {
         paginator::useBootstrapFive(); // Set Paginator to use Bootstrap 5
     }
+
+    
 }

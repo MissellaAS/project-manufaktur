@@ -11,10 +11,10 @@
             <a class="btn btn-success" href="{{ route('manufaktur.create') }}"> Create New Data</a>
         </div>
         @if ($messege = Session::get('success'))
-    <div class="alert alert-success">
-        <p>{{ $messege }}</p>
-    </div>
-@endif
+            <div class="alert alert-success">
+                <p>{{ $messege }}</p>
+            </div>
+        @endif
     <div class="table-responsive">
         <table class="table table-striped table-bordered">
             <thead>
@@ -42,25 +42,31 @@
                         <td>{{ $manufaktur->komponen_kerusakan }}</td>
                         <td>{{ $manufaktur->perawatan_besar}}</td>
                         <td>{{ $manufaktur->catatan_kelayakan }}</td>
+              
                         <td>
                             {{-- Action Buttons --}}
-                            <form action="{{ route('manufaktur.destroy', $manufaktur->id) }}" method="POST" class="d-inline">
-                                <a class="btn btn-info btn-sm" href="{{ route('manufaktur.show', $manufaktur->id) }}">Show</a>
-                                <a class="btn btn-primary btn-sm" href="{{ route('manufaktur.edit', $manufaktur->id) }}">Edit</a>
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                            </form>
+                    <div class="d-flex gap-2">
+                        <a class="btn btn-info btn-sm" href="{{ route('manufaktur.show', $manufaktur->id) }}">Show</a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('manufaktur.edit', $manufaktur->id) }}">Edit</a>
+                        <form action="{{ route('manufaktur.destroy', $manufaktur->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
+                    </div>
+
                             
-                        </td>
+                        
                         
                     </tr>
                 @endforeach
+                
             </tbody>
         </table>
     </div>
     </div>
 </div>
 
-
+<div class="mt-4">{{ $manufakturs->links() }} </div>
 @endsection('content')
+    

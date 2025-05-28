@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Manufaktur;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 
 class ManufakturController extends Controller
 {  
         
     public function index()
-    {
-        $manufakturs = Manufaktur::latest()->paginate(5); // Mengambil data manufaktur terbaru dengan pagination 10 per halaman
-        return view('manufaktur.index', compact('manufakturs'))->with(request()->input('page'));
-    }
+{
+    $manufakturs = Manufaktur::latest()->paginate(5);
+    return view('manufaktur.index', compact('manufakturs'));
+}
+
 
 
 
@@ -93,6 +95,8 @@ class ManufakturController extends Controller
 
     return redirect()->route('manufaktur.index')->with('success', 'Data mesin berhasil dihapus.');
 }
+
+
 
 
 
