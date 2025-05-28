@@ -49,7 +49,7 @@ class ManufakturController extends Controller
 
     }
 
-    public function show(Manufaktur $manufakturs)
+    public function show(Manufaktur $manufaktur)
     {
         return view('manufaktur.show', compact('manufaktur'));
     }
