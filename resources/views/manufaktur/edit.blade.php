@@ -99,7 +99,7 @@
                 <h2></h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('manufaktur.index') }}"> Submit</a>
+                <button type="submit" class="btn btn-primary">Update</button>
         </div>
  </div>
 
