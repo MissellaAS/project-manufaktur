@@ -1,6 +1,8 @@
 @extends('manufaktur.layout')
 @section('content')
-      
+       <h2 class="container text-2xl font-bold mb-4 text-center">
+  Analisis Data Kelayakan Operasional Kerusakan Pada Mesin Industri
+</h2>
 
 <div class='row p-5'>
     <div class='col-lg-12 margin-tb'>
@@ -15,7 +17,7 @@
         <p>{{ $messege }}</p>
     </div>
 @endif
-    <div class="table-responsive">
+    <div class="bg-white shadow-md rounded-lg p-6">
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -25,9 +27,7 @@
                     <th>Nama Mesin</th>
                     <th>Nomor Mesin</th>
                     <th>Kondisi Mesin</th>
-                    <th>Komponen Mesin Yang Rusak</th>
                     <th>Perawatan Besar</th>
-                    <th>Catatan Operasional</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,9 +39,7 @@
                         <td>{{ $manufaktur->nama_mesin }}</td>
                         <td>{{ $manufaktur->nomor_mesin }}</td>
                         <td>{{ $manufaktur->kondisi_mesin }}</td>
-                        <td>{{ $manufaktur->komponen_kerusakan }}</td>
                         <td>{{ $manufaktur->perawatan_besar}}</td>
-                        <td>{{ $manufaktur->catatan_kelayakan }}</td>
                         <td>
                             {{-- Action Buttons --}}
                             <form action="{{ route('manufaktur.destroy', $manufaktur->id) }}" method="POST" class="d-inline">
