@@ -6,8 +6,10 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-    <div class="container mx-auto mt-5" style="background-color: ">
-        <h1 class="text-2xl font-bold mb-4">Analisis Data Kelayakan Operasional Kerusakan Pada Mesin Industri</h1>
+    <div class="mx-auto mt-5" style="background-color: ">
+       <!-- <h2 class="text-2xl font-bold mb-4 text-center">
+  Analisis Data Kelayakan Operasional Kerusakan Pada Mesin Industri
+</h2> -->
         @yield('content')
     </div>
 </body>
@@ -37,8 +39,10 @@
         border-radius: 5px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
-    h1 {
+    h2 {
         color: #333;
+        background-position: center;
+
     }
     footer {
         position: fixed;

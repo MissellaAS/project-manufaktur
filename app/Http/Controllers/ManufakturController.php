@@ -4,16 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Manufaktur;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+
 
 class ManufakturController extends Controller
 {  
         
     public function index()
     {
-        $manufakturs = Manufaktur::all();
-        return view('manufaktur.index', compact('manufakturs'));
+        $manufakturs = Manufaktur::latest()->paginate(5); // Mengambil data manufaktur terbaru dengan pagination 10 per halaman
+        return view('manufaktur.index', compact('manufakturs'))->with(request()->input('page'));
     }
+
+
 
     public function create()
     {
@@ -21,9 +23,15 @@ class ManufakturController extends Controller
     }
 
 
+    /**
+     * Simpan data mesin baru
+     */
+
+
+
     public function store(Request $request)
     {
-        // Validasi
+     
         $request->validate([
             'nama_pegawai' => 'required',
             'tanggal_pemeriksaan' => 'required|date',
@@ -41,50 +49,55 @@ class ManufakturController extends Controller
 
     }
 
-    public function show($id)
+    public function show(Manufaktur $manufaktur)
     {
-
-        $manufakturs = Manufaktur::findOrFail($id);
-        return view('manufaktur.view', compact('manufakturs'));
+        return view('manufaktur.show', compact('manufaktur'));
     }
+   
+   
+     
+    
 
-    /**
-     * Tampilkan form edit mesin
-     */
-    public function edit($id)
+    public function edit(Manufaktur $manufaktur)
     {
-        //$machine = Manufakturs::findOrFail($id);
-        //return view('manufakturs.edit', compact('manufakturs'));
+      
+        return view('manufaktur.edit', compact('manufaktur'));
     }
 
     /**
      * Simpan perubahan data mesin
      */
-    public function update(Request $request, $id)
+
+
+
+
+    public function update(Manufaktur $manufaktur, $id)
     {
-        // Validasi
-        //$request->validate([
-            //'nama_pegawai' => 'required|string|max:255',
-            //'nama_mesin' => 'required|string|max:255',
-            //'nomor_mesin' => 'required|string|max:255',
-            //'kondisi_mesin' => 'required|boolean',
-            //'komponen_kerusakan' => 'nullable|string|max:255',
-            //'membutuhkan_perawatanbesar_atau_tidak' => 'required|boolean',
-            //'catatan_kelayakan' => 'nullable|string',
-        //]);
+        
+        $request->validate([
+            'nama_pegawai' => 'required|string|max:255',
+            'nama_mesin' => 'required|string|max:255',
+            'nomor_mesin' => 'required|string|max:255',  
+            'kondisi_mesin' => 'required|boolean',
+            'komponen_kerusakan' => 'nullable|string|max:255',
+            'membutuhkan_perawatanbesar_atau_tidak' => 'required|boolean',
+            'catatan_kelayakan' => 'nullable|string',
+        ]);
 
-
-        //return redirect()->route('machines.index')->with('success', 'Data mesin berhasil diperbarui');
+        $manufaktur->update($request->all());
+        return redirect()->route('manufakturs.index')->with('success', 'Data mesin berhasil diperbarui');
     }
 
-    /**
-     * Hapus data mesin
-     */
-    public function destroy($id)
-    {
-        //$machine = Manufaktur::findOrFail($id);
-        //$machine->delete();
+   
 
-       // return redirect()->route('machines.index')->with('success', 'Data mesin berhasil dihapus');
-    }
+   public function destroy(Manufaktur $manufaktur)
+{
+    
+    $manufaktur->delete();
+
+    return redirect()->route('manufaktur.index')->with('success', 'Data mesin berhasil dihapus.');
+}
+
+
+
 }
