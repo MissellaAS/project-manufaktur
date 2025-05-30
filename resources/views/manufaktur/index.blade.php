@@ -50,7 +50,7 @@
                     <div class="d-flex gap-2">
                         <a class="btn btn-info btn-sm" href="{{ route('manufaktur.show', $manufaktur->id) }}">Show</a>
                         <a class="btn btn-primary btn-sm" href="{{ route('manufaktur.edit', $manufaktur->id) }}">Edit</a>
-                        <form action="{{ route('manufaktur.destroy', $manufaktur->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus data ini?')">
+                        <form action="{{ route('manufaktur.destroy', $manufaktur->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>

@@ -4,7 +4,10 @@
 
 <div class="container mx-auto px-8 py-20 bg-white rounded-xl shadow-2xl text-center">
 
-    <h1 class="text-5xl font-extrabold text-indigo-900 mb-6">🔧 Selamat Datang di Sistem Pemeriksaan Mesin</h1>
+    <h1 class="text-3xl font-extrabold text-indigo-900 mb-6">
+    🔧 Selamat Datang di Sistem Pemeriksaan Mesin
+</h1>
+
 
   <div class="row max-w-3xl mx-auto px-6 ">
     <p class=" row text-lg text-gray-700 leading-relaxed ">
@@ -21,9 +24,10 @@
 
     <div class="mt-12">
         <a href="{{ route('manufaktur.create') }}"
-           class="inline-block px-8 py-4 text-black text-xl font-semibold bg-indigo-600 hover:bg-indigo-700 rounded-lg transition">
-            🚀 Mulai Pemeriksaan
-        </a>
+   class="inline-block px-5 py-2 text-black text-base font-medium bg-indigo-600 hover:bg-indigo-700 rounded-md transition">
+    🚀 Mulai Pemeriksaan
+</a>
+
     </div>
 
 </div>
