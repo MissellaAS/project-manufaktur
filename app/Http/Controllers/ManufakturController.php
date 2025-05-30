@@ -43,6 +43,7 @@ class ManufakturController extends Controller
             'komponen_kerusakan' => 'nullable',
             'perawatan_besar' => 'required',
             'catatan_kelayakan' => 'nullable',
+            'action_data' => 'nullable', // Aksi yang diambil berdasarkan logika sistem
         ]);
 
         Manufaktur::create($request->all());   

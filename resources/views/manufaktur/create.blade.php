@@ -3,7 +3,10 @@
 @section('content')
 
 <div class="container transition-all duration-700 ease-in-out transform hover:scale-[1.005] shadow-2xl hover:shadow-indigo-300/50 ">
-
+    <div class="mb-12 text-center">
+       
+        <hr class="mt-6 border-indigo-400 w-1/2 mx-auto">
+    </div>
     
     <h2 class="text-4xl font-extrabold text-center text-indigo-800 mb-10">🛠️ Form Pemeriksaan Mesin</h2>
 
@@ -92,9 +95,9 @@
             <label for="catatan_kelayakan" class="w-48 pt-2 text-lg font-semibold text-gray-900"> Catatan Operasional </label>
             <textarea name="catatan_kelayakan" id="catatan_kelayakan" rows="4" required class="flex-grow max-w-md px-5 py-3 border border-gray-300 rounded-xl shadow-inner focus:ring-2 focus:ring-indigo-400 transition resize-y" placeholder="Informasi Pendukung Lainnya" ></textarea>
         </div>
-
+        <br><br>
         {{-- Tombol --}}
-        <div class="row flex justify-endmt-8">
+        <div class="flex justify-endmt-8">
 
             <button type="submit" class="px-6 py-2 bg-blue-500 text-black font-semibold rounded-lg hover:bg-blue-600 transition">✅ Submit</button>
             <button type="reset" class="px-6 py-2 bg-red-500 text-black font-semibold rounded-lg hover:bg-red-600 transition">🔄 Reset</button>

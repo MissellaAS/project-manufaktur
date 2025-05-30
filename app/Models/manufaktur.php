@@ -18,6 +18,7 @@ class Manufaktur extends Model
         'komponen_kerusakan',
         'perawatan_besar',
         'catatan_kelayakan',
+        'action_data',
         
     ];
 }

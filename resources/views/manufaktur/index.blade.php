@@ -28,6 +28,8 @@
                     <th>Komponen Mesin Yang Rusak</th>
                     <th>Perawatan Besar</th>
                     <th>Catatan Operasional</th>
+                    <th width="280px">Action</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -42,7 +44,7 @@
                         <td>{{ $manufaktur->komponen_kerusakan }}</td>
                         <td>{{ $manufaktur->perawatan_besar}}</td>
                         <td>{{ $manufaktur->catatan_kelayakan }}</td>
-              
+                     
                         <td>
                             {{-- Action Buttons --}}
                     <div class="d-flex gap-2">

@@ -3,6 +3,8 @@ use App\Http\Controllers\ManufakturController;
 use Illuminate\Support\Facades\Route;
 
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,5 +21,16 @@ Route::get('/', function () {
 });
 
 Route::resource('manufaktur', ManufakturController::class);
+
+
+
+// Halaman pengantar
+Route::get('/pemeriksaan-awal', function () {
+    return view('manufaktur.pengantar');
+})->name('pengantar');
+
+// Halaman form utama (pastikan ini sudah ada)
+Route::get('/form-pemeriksaan', [App\Http\Controllers\ManufakturController::class, 'create'])->name('manufaktur.create');
+
 
 

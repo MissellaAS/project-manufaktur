@@ -92,6 +92,7 @@
                 <textarea class="form-control" style="height:150px" name="catatan_kelayakan" placeholder="Catatan Operasional">{{ $manufaktur->catatan_kelayakan }}</textarea>
             </div>
         </div>
+        
 
 
         <div class="col-lg-12 margin-tb text-center">

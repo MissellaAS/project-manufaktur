@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('komponen_kerusakan')->nullable();
             $table->string('perawatan_besar');
             $table->text('catatan_kelayakan')->nullable();//--catatan sistem berdasarkan logika--//;
+            $table->string('action_data')->default(); //--aksi yang diambil berdasarkan logika sistem--//;
             $table->timestamps(); 
         });
     }
