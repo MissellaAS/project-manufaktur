@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="container ... transition-all duration-700 ease-in-out transform hover:scale-[1.005] shadow-2xl hover:shadow-indigo-300/50">
+<div class="container transition-all duration-700 ease-in-out transform hover:scale-[1.005] shadow-2xl hover:shadow-indigo-300/50 ">
 
     
-    <h2 class="text-4xl font-extrabold text-center text-indigo-800 mb-10">🛠️ Pemeriksaan Mesin</h2>
+    <h2 class="text-4xl font-extrabold text-center text-indigo-800 mb-10">🛠️ Form Pemeriksaan Mesin</h2>
 
     <form action="{{ route('manufaktur.store') }}" method="POST" class="space-y-8">
         @csrf
@@ -86,7 +86,7 @@
                 </label>
             </div>
         </div>
-
+    <div class="flex flex-col space-y-16">
         {{-- Catatan --}}
         <div class="row flex items-start gap-12">
             <label for="catatan_kelayakan" class="w-48 pt-2 text-lg font-semibold text-gray-900"> Catatan Operasional </label>
@@ -94,10 +94,12 @@
         </div>
 
         {{-- Tombol --}}
-        <div class="flex justify-end gap-4 pt-6">
+        <div class="row flex justify-endmt-8">
+
             <button type="submit" class="px-6 py-2 bg-blue-500 text-black font-semibold rounded-lg hover:bg-blue-600 transition">✅ Submit</button>
             <button type="reset" class="px-6 py-2 bg-red-500 text-black font-semibold rounded-lg hover:bg-red-600 transition">🔄 Reset</button>
         </div>
+    </div>
     </form>
 </div>
 

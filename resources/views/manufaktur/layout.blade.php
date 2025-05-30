@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="container p-5">
-            <h1 style="color: black;">Analisis Data Kelayakan Operasional Kerusakan Pada Mesin Industri</h1>
+            <h1 style="color: black;">Analisis Kerusakan Mesin Terhadap Kelayakan Operasional di Politeknik Industri ATMI Cikarang</h1>
 
             @yield('content')
         </div>
