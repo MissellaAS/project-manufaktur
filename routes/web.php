@@ -30,7 +30,7 @@ Route::get('/pemeriksaan-awal', function () {
 })->name('pengantar');
 
 // Halaman form utama (pastikan ini sudah ada)
-Route::get('/form-pemeriksaan', [App\Http\Controllers\ManufakturController::class, 'create'])->name('manufaktur.create');
+Route::get('/manufaktur/create', [App\Http\Controllers\ManufakturController::class, 'create'])->name('manufaktur.create');
 
 
 
